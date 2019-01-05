@@ -10,4 +10,6 @@ public interface IUserService {
     ServerResponse<String> register(User user);
 
     ServerResponse<String> selectQuestion(String username);
+
+    ServerResponse chaeckAdminRole(User user);
 }

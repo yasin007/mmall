@@ -67,4 +67,17 @@ public class UserServiceImpl implements IUserService {
         }
         return ServerResponse.createByErrorMessage("找回密码的问题是空的");
     }
+
+    /**
+     * 校验是否是管理员
+     *
+     * @param user
+     * @return
+     */
+    public ServerResponse chaeckAdminRole(User user) {
+        if (user != null && user.getRole().intValue() == Const.Role.ROLE_ADMIN) {
+            return ServerResponse.createBySuccess();
+        }
+        return ServerResponse.createByError();
+    }
 }
